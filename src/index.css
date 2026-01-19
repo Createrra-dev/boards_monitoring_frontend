@@ -1,0 +1,510 @@
+@font-face {
+  font-family: 'GilroyExtraBold';
+  src: url('fonts/Gilroy-ExtraBold.otf') format('opentype');
+  font-weight: 800; /* жирность */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GilroyLight';
+  src: url('fonts/Gilroy-Light.otf') format('opentype');
+  font-weight: 300; /* легкий */
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: GilroyLight;
+}
+
+.main {
+  background-image: url("/printed-circuit-board-1-56622-1000x0-MM-80.webp");
+  background-size: cover;
+  min-height: 80vh;
+  position: relative; 
+  overflow: visible;
+}
+
+.header {
+  background-color: white;
+  height: 10vh;
+}
+
+.footer {
+  background-color: white;
+  height: 10vh;
+  text-align: "center";
+  font-size: "14px";
+  color: rgb(48, 48, 48);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  color: rgb(48, 48, 48);
+  font-family: Great Vibes;
+  font-weight: bolder;
+  font-size: 38px;
+  text-decoration: none;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  padding-left: 3vh;
+}
+
+/* Обёртка для центрирования */
+.home-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Белая карточка */
+/* .organization-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 48px;
+  min-width: 360px;
+  max-width: 520px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  animation: fadeUp 0.6s ease-out forwards;
+} */
+
+.organization-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 48px;
+  width: 520px;            /* фиксированная ширина */
+  max-height: 500px;       /* фиксированная высота */
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeUp 0.6s ease-out forwards;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.organization-title {
+  font-family: GilroyExtraBold;
+  font-size: 26px;
+  color: rgb(48, 48, 48);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.organization-title {
+  flex-shrink: 0;
+}
+
+.org-button:hover {
+  background-color: #111827;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация появления */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .organization-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+} */
+
+.organization-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+
+  max-height: 360px;       /* фиксированная высота */
+  overflow-y: auto;        /* вертикальный скролл */
+  padding-right: 6px;      /* место под скролл */
+}
+
+.org-button {
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: none;
+  background: #f8f8f8;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  transition: all 0.25s ease;
+}
+
+.org-name {
+  font-family: GilroyExtraBold;
+  font-size: 16px;
+  color: rgb(48, 48, 48);
+}
+
+.org-button:hover .org-name {
+  color: white;
+}
+
+.org-status {
+  font-family: GilroyLight;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.org-status.ok {
+  color: #16a34a; /* зелёный */
+}
+
+.org-status.error {
+  color: #dc2626; /* красный */
+}
+
+.organization-buttons::-webkit-scrollbar {
+  width: 6px;
+}
+
+.organization-buttons::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.organization-buttons::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.organization-buttons::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.boards-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.boards-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 40px 48px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 420px; /* ограничение высоты */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.6s ease-out forwards; /* анимация появления */
+}
+
+.boards-title {
+  font-family: GilroyExtraBold;
+  font-size: 26px;
+  color: rgb(48, 48, 48);
+  text-align: center;
+  margin-bottom: 32px;
+  flex-shrink: 0;
+}
+
+/* Сетка 3 колонки с вертикальным скроллом */
+.boards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  overflow-y: auto; /* вертикальный скролл */
+  max-height: 360px; /* подгоняем под контейнер */
+  padding-right: 6px; /* место под скролл */
+  animation: fadeUp 0.6s ease-out forwards; /* плавное появление кнопок */
+}
+
+/* Прокрутка */
+.boards-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.boards-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.boards-grid::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.boards-grid::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Кнопки плат */
+.board-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background-color: #f8f8f8;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.board-button:hover {
+  background-color: #111827;
+}
+
+.board-button:hover .board-name {
+  color: white;
+}
+
+.board-name {
+  font-family: GilroyExtraBold;
+  font-size: 16px;
+  color: rgb(48, 48, 48);
+  margin-bottom: 8px;
+}
+
+.board-status {
+  font-family: GilroyLight;
+  font-size: 13px;
+}
+
+.board-status.ok {
+  color: #16a34a; /* зелёный */
+}
+
+.board-status.error {
+  color: #dc2626; /* красный */
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  max-height: 360px;
+  padding-right: 6px;
+}
+
+.history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.history-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.history-item {
+  display: flex;
+  justify-content: space-between; /* распределяет элементы по всей ширине */
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background-color: #f8f8f8;
+  transition: all 0.25s ease;
+  font-family: GilroyLight;
+  gap: 16px;
+}
+
+.history-time {
+  width: 35%; /* фиксированная ширина для даты */
+  text-align: left;
+  font-size: 14px;
+}
+
+.history-event {
+  width: 30%; /* ширина для event */
+  text-align: center; /* выравнивание по центру */
+  font-size: 14px;
+}
+
+.history-status {
+  width: 30%; /* ширина для статуса */
+  text-align: right; /* статус справа */
+  font-family: GilroyExtraBold;
+  font-size: 14px;
+}
+
+.history-status.ok {
+  color: #16a34a;
+}
+
+.history-status.error {
+  color: #dc2626;
+}
+
+.back-button {
+  max-width: 150px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 24px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  background-color: #f8f8f8;
+  color: rgb(48, 48, 48);
+  font-family: GilroyExtraBold;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.25s ease;
+}
+
+.back-button:hover {
+  background-color: #111827;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+
+  /* Общие отступы */
+  .boards-wrapper,
+  .home-wrapper {
+    padding: 20px 12px;
+  }
+
+  /* Главная карточка организаций */
+  .organization-container {
+    width: 100%;
+    max-height: 90vh;
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .organization-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Организации — одна колонка */
+  .organization-buttons {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .org-name {
+    font-size: 15px;
+  }
+
+  .org-status {
+    font-size: 12px;
+  }
+
+  /* Страница плат */
+  .boards-container {
+    padding: 24px 20px;
+    max-height: 90vh;
+    border-radius: 16px;
+  }
+
+  .boards-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Платы — одна колонка */
+  .boards-grid {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .board-name {
+    font-size: 15px;
+  }
+
+  .board-status {
+    font-size: 12px;
+  }
+
+  /* История состояний */
+  .history-list {
+    max-height: none;
+  }
+
+  .history-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 14px;
+  }
+
+  .history-time,
+  .history-event,
+  .history-status {
+    width: 100%;
+    text-align: left;
+    font-size: 13px;
+  }
+
+  /* Кнопка назад */
+  .back-button {
+    width: 100%;
+    max-width: 150px;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  /* Header / Footer */
+  .header {
+    height: auto;
+    padding: 12px 0;
+  }
+
+  .footer {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer div {
+    max-width: 260px;
+    line-height: 1.4;
+  }
+
+  .logo {
+    font-size: 26px;
+  }
+}
