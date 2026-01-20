@@ -12,7 +12,7 @@ function BoardStateHistory() {
   );
 
   useEffect(() => {
-    dispatch(getBoardHistory({ boardSlug }));
+    dispatch(getBoardHistory({ organizationSlug, boardSlug }));
   }, [dispatch, boardSlug]);
 
   return (

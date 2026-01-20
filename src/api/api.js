@@ -7,8 +7,8 @@ const api = {
     async getOrganizationBoards(organizationSlug) {
         return await axios.get(`/organizations/${organizationSlug}/boards/`)
     },
-    async getBoardHistory(boardSlug) {
-        return await axios.get(`/boards/${boardSlug}/history/`)
+    async getBoardHistory(organizationSlug, boardSlug) {
+        return await axios.get(`/organizations/${organizationSlug}/boards/${boardSlug}/history/`)
     }
 }
 

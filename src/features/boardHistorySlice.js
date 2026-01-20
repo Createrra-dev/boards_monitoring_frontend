@@ -9,9 +9,9 @@ const initialState = {
 
 export const getBoardHistory = createAsyncThunk(
   "boardHistory/getBoardHistory",
-  async ({ boardSlug }, { rejectWithValue }) => {
+  async ({ organizationSlug, boardSlug }, { rejectWithValue }) => {
     try {
-      const response = await api.getBoardHistory(boardSlug);
+      const response = await api.getBoardHistory(organizationSlug, boardSlug);
       return response.data;
     } catch (e) {
       return rejectWithValue(
